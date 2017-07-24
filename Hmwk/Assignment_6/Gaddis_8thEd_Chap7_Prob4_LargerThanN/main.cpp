@@ -3,8 +3,8 @@
 /* 
  * File:   main.cpp
  * Author: Niken Hertanto
- * Created on July 10, 2017, 7:06 PM
- * Purpose: Future Value
+ * Created on July 23, 2017, 8:25 PM
+ * Purpose: Larger Than N
  */
 
 //System Libraries
@@ -18,7 +18,7 @@ using namespace std; // Libraries using namespace standard
 //Global Constants -> Physics/Math/Conversions
 
 //Function Prototypes
-float futureValue(float, float, float);
+void ary (int, int[], int);
 
 //Execution Begins Here!
 
@@ -27,32 +27,42 @@ float futureValue(float, float, float);
  */
 int main(int argc, char** argv) {
     //Declare Variables
-    float pValue, mRate, nMonth; //present value, monthly interest rate
-            //number of months
+    int SIZE; //input - size of array
+    int array[1000]; //input - array
+    int n; //input - number the array must be larger than
 
     //Input data values
-    cout << "This program calculates your future value of your account"
-            " after a specified amount of time" << endl;
-    cout << "Please input the present value, the monthly interest rate,"
-            " and the number of months for your account." << endl;
-    cout << "Present value             : $";
-    cin >> pValue;
-    cout << "Monthly Interest Rate (%) : ";
-    cin >> mRate;
-    cout << "Number of months          : ";
-    cin >> nMonth;        
-
-    //Output the results
-    cout << "Your future value is      : $" << futureValue(pValue, mRate, nMonth) 
-            << endl;
-
+    cout << "Problem 4: Larger Than n" << endl;
+    cout << endl;
+    cout << "This program displays all numbers in an array that is larger than "
+            "n" << endl; 
+    cout << "Please input integer values for the following: " << endl;
+    cout << "Size of array      : ";
+    cin >> SIZE;
+    cout << "Value of 'n'       : ";
+    cin >> n;
+    cout << "Values in the array: " << endl;
+    for (int x = 0; x < SIZE; x++){
+        cout << "#" << x + 1 << " ";
+        cin >> array[x];
+    }
+    
+    ary (SIZE, array, n);
+  
+   
     //Exit stage right
 
     return 0;
 }
-
-float futureValue(float pV, float mR, float nM){
-    mR = mR / 100;
-    float fV = pow((1 + mR), nM) * pV;
-    return fV;
+void ary (int SIZE, int array[], int n){
+    //Determine if any number in array is larger than n
+    cout << "In the array, the values larger than " << n << 
+            " is/are: ";
+    for (int i = 0; i < SIZE; i++){
+        if(array[i] > n){
+            cout << array[i] << " ";
+        }
+        
+    }
+    
 }

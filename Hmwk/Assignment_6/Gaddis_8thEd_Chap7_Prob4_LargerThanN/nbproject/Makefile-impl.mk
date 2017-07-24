@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Gaddis_8thEd_Chap7_Prob1_LargestSmallestArrayValues
+PROJECTNAME=Gaddis_8thEd_Chap7_Prob4_LargerThanN
 
 # Active Configuration
 DEFAULTCONF=Debug
